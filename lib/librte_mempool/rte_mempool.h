@@ -674,6 +674,13 @@ rte_mempool_create(const char *name, unsigned n, unsigned elt_size,
 		   rte_mempool_obj_cb_t *obj_init, void *obj_init_arg,
 		   int socket_id, unsigned flags);
 
+struct rte_mempool *
+rte_mempool_create_oneseg(const char *name, unsigned n, unsigned elt_size,
+		   unsigned cache_size, unsigned private_data_size,
+		   rte_mempool_ctor_t *mp_init, void *mp_init_arg,
+		   rte_mempool_obj_cb_t *obj_init, void *obj_init_arg,
+		   int socket_id, unsigned flags);
+
 /**
  * Create a new mempool named *name* in memory.
  *
